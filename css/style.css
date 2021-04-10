@@ -145,7 +145,7 @@ header {
     transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
 }
 
- .nav__list {
+.nav__list {
     list-style: none;
     display: flex;
     height: 100%;
@@ -169,6 +169,7 @@ header {
 
 
 .nav-toggle {
+    display: block;
     padding: .25em;
     background: transparent;
     border: 0;
@@ -179,6 +180,32 @@ header {
     z-index: 1000;
 }
 
+@media screen and (min-width: 600px) {
+    .nav {
+        display: flex;
+        position: relative;
+        background: inherit;
+        color: var(--clr-dark);
+        transform: translateX(0);
+    }
+
+     .nav__list {
+        flex-direction: row;
+    }
+
+    .nav__link {
+        font-size: var(--fs-h3);
+        margin-right: 10px;
+    }
+
+    .nav__link:hover {
+        color: var(--clr-accent);
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+}
 
 .nav-open .nav {
     transform: translateX(0);
@@ -187,7 +214,7 @@ header {
     position: fixed;
 }
 
- .nav-open .hamburger {
+.nav-open .hamburger {
     transform: rotate(.625turn);
 }
 
